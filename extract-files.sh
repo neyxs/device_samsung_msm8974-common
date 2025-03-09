@@ -46,10 +46,10 @@ function blob_fixup() {
 
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
-for BLOB_LIST in "${MY_DIR}"/common-proprietary-files*.txt; do
-    extract "${BLOB_LIST}" "${SRC}"
-done
+extract "${MY_DIR}/common-proprietary-files.txt" "${SRC}"
+#for BLOB_LIST in "${MY_DIR}"/common-proprietary-files*.txt; do
+#    extract "${BLOB_LIST}" "${SRC}"
+#done
 
-export BOARD_COMMON=msm8974-common
-
-"./../../${VENDOR}/${BOARD_COMMON}/extract-files.sh" "$@"
+#export BOARD_COMMON=msm8974-common
+#"./../../${VENDOR}/${BOARD_COMMON}/extract-files.sh" "$@"

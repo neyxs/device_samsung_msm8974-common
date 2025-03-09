@@ -32,7 +32,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "klte klteactivexx klteaio kltechn kltechnduo klteduos kltedv kltekdi kltekor"
+write_headers "ks01lte"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/common-proprietary-files.txt" true
@@ -42,11 +42,10 @@ write_footers
 
 # This is the "common" M radio/QC framework stack. Most variants will inherit
 # this file. If they cannot then they will ship their own stack
-PRODUCTMK="$(echo $PRODUCTMK | sed -e 's|-vendor.mk|-vendor-ril-m.mk|g')"
-write_makefile_header "$PRODUCTMK"
-parse_file_list "${MY_DIR}/common-proprietary-files-ril-m.txt"
-write_product_copy_files true
+#PRODUCTMK="$(echo $PRODUCTMK | sed -e 's|-vendor.mk|-vendor-ril-m.mk|g')"
+#write_makefile_header "$PRODUCTMK"
+#parse_file_list "${MY_DIR}/common-proprietary-files-ril-m.txt"
+#write_product_copy_files true
 
-export BOARD_COMMON=msm8974-common
-
-"./../../${VENDOR}/${BOARD_COMMON}/setup-makefiles.sh" "$@"
+#export BOARD_COMMON=msm8974-common
+#"./../../${VENDOR}/${BOARD_COMMON}/setup-makefiles.sh" "$@"
